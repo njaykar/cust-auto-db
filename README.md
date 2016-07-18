@@ -1,6 +1,6 @@
 # cust-auto-db
 
-# A sample Spring MVC JPA app with MySql Serve Database connection. 
+# A sample Spring MVC JPA app with MySql Server Database connection. 
 
 # The Database Schema is an example of a non identifying One-To-Many Relationship.
 
