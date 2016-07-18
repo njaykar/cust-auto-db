@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    	
+</head>
+<body>
+	
+            <h1>Customer</h1>
+            Name: <b th:text="${customer.customer_name}" /> <br/>
+			Address: <span th:text="${customer.customer_address}" /><br/>
+			Vehicles:
+					<span th:each="vehicle : ${customer.vehicles}">
+					<br/>&nbsp;&nbsp;<span th:text="${vehicle.vehicle_rego}" /> - <span th:text="${vehicle.vehicle_model}" />
+					</span>
+             	
+            		<form th:action="@{/customer/{customerId}/vehicles(customerId=${customer.customerId})}" method="post" enctype="multipart/form-data" >
+            								
+            					
+	                  			  	<label>Rego</label>
+	                 			  	<input type="text" name="vehicle_rego" />
+	                  			 
+	                  			 	<label>Model</label>
+	                 				<input type="text" name="vehicle_model" />
+	                    			
+                				 	<label>Color</label>
+	                 				<input type="text"  name="color" />
+	                    			           						
+                					<button type="submit" name="button">Add</button>
+                					
+            	 	</form>
+           
+          
+
+</body>
+</html>
